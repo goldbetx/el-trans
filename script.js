@@ -231,8 +231,8 @@ if (contactMapEl && window.L) {
     iconSize: [16, 16]
   });
 
-  // Lidhja për në Google Maps te vendndodhja e saktë (hap navigimin)
-  const GMAPS_URL = 'https://www.google.com/maps/search/?api=1&query=41.107637,20.049547';
+  // Lidhja zyrtare e profilit të biznesit EL TRANS në Google Maps (hap navigimin)
+  const GMAPS_URL = 'https://maps.app.goo.gl/pWREc8t3THwtjF3t9';
   const directionsLabel = (document.documentElement.lang === 'en') ? 'Open in Google Maps' : 'Hap në Google Maps';
 
   L.marker(office, { icon: officeIcon }).addTo(cmap)
