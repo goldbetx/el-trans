@@ -220,7 +220,8 @@ if (mapEl && window.L) {
 // 5b) Harta e vogël te faqja e kontaktit
 const contactMapEl = document.getElementById('contact-map');
 if (contactMapEl && window.L) {
-  const office = [41.1125, 20.0822];
+  // Vendndodhja reale e zyrës EL TRANS (Plus Code 425X+3R3, Elbasan)
+  const office = [41.107637, 20.049547];
   const cmap = L.map('contact-map', { scrollWheelZoom: false }).setView(office, 14);
   L.tileLayer(DARK_TILES, { attribution: TILE_ATTR, maxZoom: 18 }).addTo(cmap);
 
