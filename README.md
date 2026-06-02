@@ -6,7 +6,7 @@ freight transport company based in Elbasan.
 Built with plain **HTML + CSS + vanilla JavaScript** — no frameworks, no build
 step. It runs by simply opening the files in a browser.
 
-🌍 **Live site:** https://YOUR-USERNAME.github.io/el-trans/
+🌍 **Live site:** https://goldbetx.github.io/el-trans/
 
 ---
 
@@ -92,7 +92,7 @@ Then open <http://localhost:8000>. (Any static server works — e.g. the VS Code
 2. In the repo: **Settings → Pages → Build and deployment**.
 3. Source: **Deploy from a branch**, branch **main**, folder **/ (root)**, Save.
 4. After ~1 minute the site is live at
-   `https://YOUR-USERNAME.github.io/el-trans/`.
+   `https://goldbetx.github.io/el-trans/`.
 
 All asset paths are relative, so the site works correctly under the
 `/el-trans/` subpath without changes.
