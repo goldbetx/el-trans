@@ -230,6 +230,14 @@ if (contactMapEl && window.L) {
     html: '<div style="background:#C9A24B;width:16px;height:16px;border-radius:50%;border:3px solid #111418;box-shadow:0 0 10px #C9A24B;"></div>',
     iconSize: [16, 16]
   });
+
+  // Lidhja për në Google Maps te vendndodhja e saktë (hap navigimin)
+  const GMAPS_URL = 'https://www.google.com/maps/search/?api=1&query=41.107637,20.049547';
+  const directionsLabel = (document.documentElement.lang === 'en') ? 'Open in Google Maps' : 'Hap në Google Maps';
+
   L.marker(office, { icon: officeIcon }).addTo(cmap)
-    .bindPopup('<strong>EL TRANS</strong><br>Rruga Kadri Hoxha, Elbasan').openPopup();
+    .bindPopup(
+      '<strong>EL TRANS</strong><br>Rruga Kadri Hoxha, Elbasan<br>' +
+      '<a href="' + GMAPS_URL + '" target="_blank" rel="noopener">' + directionsLabel + '</a>'
+    ).openPopup();
 }

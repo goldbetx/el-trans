@@ -449,6 +449,8 @@ h1, h2, h3, h4 { color: var(--white); letter-spacing: -0.5px; font-weight: 800; 
   border-radius: var(--radius); border: 1px solid var(--border);
   box-shadow: var(--shadow); margin-top: 44px; z-index: 1;
 }
+/* Butoni "Hap në Google Maps" poshtë hartës */
+.map-actions { text-align: center; margin-top: 22px; }
 
 /* =========================================================
    RESPONSIVE
