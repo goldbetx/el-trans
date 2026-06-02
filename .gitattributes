@@ -1,0 +1,8 @@
+# Normalize line endings: keep text files as LF in the repo
+* text=auto eol=lf
+
+# Treat images as binary (never converted)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.svg text

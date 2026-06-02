@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!-- EL TRANS — Home page (English). Albanian version is at /index.html -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>EL TRANS — Freight Transport in Albania &amp; the Balkans</title>
+  <meta name="description" content="EL TRANS provides safe freight transport across Albania and the Balkans. 12 years of experience, refrigerated and high-volume transport up to 120m³." />
+
+  <!-- hreflang: links this page to its Albanian counterpart -->
+  <link rel="alternate" hreflang="sq" href="https://eltrans.com.al/index.html" />
+  <link rel="alternate" hreflang="en" href="https://eltrans.com.al/en/index.html" />
+  <link rel="alternate" hreflang="x-default" href="https://eltrans.com.al/index.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Leaflet (free map with OpenStreetMap) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Shared stylesheet (one level up) -->
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="EL TRANS — home">
+        <img src="../images/EL-TRANS-LOGO-1.png" alt="EL TRANS logo" width="150" height="40" />
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <!-- Language switch: SQ points back to the Albanian home -->
+        <div class="lang-switch">
+          <a href="../index.html">SQ</a>
+          <span aria-hidden="true">|</span>
+          <a href="index.html" class="active" aria-current="true">EN</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero-text">
+        <p class="eyebrow">Transport &amp; Logistics</p>
+        <h1>Safe freight transport across Albania and the Balkans</h1>
+        <p class="subhead">12 years of experience</p>
+        <a href="contact.html" class="btn btn-accent">Request a quote</a>
+      </div>
+    </section>
+
+    <!-- ============ JOURNEY (scroll-driven truck) ============ -->
+    <!-- Tall section: the inner container stays sticky while the truck moves
+         with scroll. The map markup (route, pins) is built by script.js. -->
+    <section class="journey" aria-label="The truck's journey from Elbasan to Germany">
+      <div class="journey-sticky">
+        <div class="container journey-head">
+          <p class="eyebrow">Our journey</p>
+          <h2 class="section-title">From Elbasan to the heart of Europe</h2>
+          <p class="section-sub">Scroll down to follow our truck — each destination lights up in turn.</p>
+        </div>
+
+        <div class="journey-map">
+          <svg id="journey-svg" viewBox="0 0 1000 600" role="img"
+               aria-label="Map of the route from Elbasan through the Balkans to Germany">
+            <defs>
+              <radialGradient id="mapbg" cx="50%" cy="42%" r="75%">
+                <stop offset="0%" stop-color="#1c2128" />
+                <stop offset="100%" stop-color="#0d1014" />
+              </radialGradient>
+              <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="1.1" fill="#232a33" />
+              </pattern>
+              <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+                <feGaussianBlur stdDeviation="3" result="b" />
+                <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
+              </filter>
+            </defs>
+
+            <rect width="1000" height="600" fill="url(#mapbg)" />
+            <rect width="1000" height="600" fill="url(#dots)" />
+
+            <!-- Route line: faint (full) + bright (travelled) -->
+            <path id="route-bg" d=""></path>
+            <path id="route-progress" d=""></path>
+
+            <!-- Destination pins (created by script.js) -->
+            <g id="pins"></g>
+
+            <!-- Truck with "EL TRANS" on the trailer (centred at origin 0,0) -->
+            <g id="truck">
+              <ellipse cx="-6" cy="22" rx="42" ry="5" fill="#000000" opacity="0.35" />
+              <rect x="-48" y="-20" width="66" height="34" rx="3" fill="#1a1e24" stroke="#C9A24B" stroke-width="1.5" />
+              <text x="-15" y="2" text-anchor="middle" font-family="Inter, sans-serif"
+                    font-size="12" font-weight="800" fill="#ffffff" letter-spacing="0.5">EL TRANS</text>
+              <path d="M18 -20 h16 l10 13 v21 h-26 z" fill="#C9A24B" />
+              <path d="M22 -15 h10 l7 9 h-17 z" fill="#0e1116" />
+              <circle cx="-32" cy="16" r="6" fill="#0b0d10" stroke="#3a4049" stroke-width="1.5" />
+              <circle cx="-10" cy="16" r="6" fill="#0b0d10" stroke="#3a4049" stroke-width="1.5" />
+              <circle cx="30" cy="16" r="6" fill="#0b0d10" stroke="#3a4049" stroke-width="1.5" />
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS with count-up ============ -->
+    <section class="stats" aria-label="Statistics">
+      <div class="container stats-grid">
+        <div class="stat">
+          <span class="stat-num" data-target="12">0</span>
+          <span class="stat-label">Years</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-target="20" data-suffix="+">0</span>
+          <span class="stat-label">Destinations</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-target="100" data-suffix="M+">0</span>
+          <span class="stat-label">Kilometres</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-target="100" data-suffix="%">0</span>
+          <span class="stat-label">Satisfied Clients</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES (4 cards) ============ -->
+    <section class="services">
+      <div class="container">
+        <h2 class="section-title">Our services</h2>
+        <p class="section-sub">Transport solutions for every need, at home and abroad.</p>
+
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-icon">📦</div>
+            <h3>Freight transport</h3>
+            <p>We move goods of every kind safely and on time across the region.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">❄️</div>
+            <h3>Refrigerated transport</h3>
+            <p>Temperature-controlled vehicles for food and perishable goods.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">🚛</div>
+            <h3>High-volume transport</h3>
+            <p>Capacity of up to 120m³ for large and bulky loads.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">🌍</div>
+            <h3>Domestic &amp; international</h3>
+            <p>We operate across Albania, the Balkans and Western Europe on regular routes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHERE WE OPERATE (map) ============ -->
+    <section class="map-section">
+      <div class="container">
+        <h2 class="section-title">Where We Operate</h2>
+        <p class="section-sub">Based in Elbasan, we cover destinations across the Balkans and Europe.</p>
+      </div>
+      <div id="map" role="img" aria-label="Map of EL TRANS destinations from Elbasan"></div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <img src="../images/EL-TRANS-LOGO-1.png" alt="EL TRANS logo" class="footer-logo" width="160" height="42" />
+        <p>Safe freight transport across Albania and the Balkans.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Rruga Kadri Hoxha, Elbasan, Albania</p>
+        <p>
+          <a href="tel:+355694090535">+355 69 409 0535</a><br />
+          <a href="tel:+355692427125">+355 69 242 7125</a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Email</h4>
+        <p>
+          <a href="mailto:elton@eltrans.com.al">elton@eltrans.com.al</a><br />
+          <a href="mailto:info@eltrans.com.al">info@eltrans.com.al</a>
+        </p>
+        <a href="https://www.facebook.com/eltrans.al/" class="social-link" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 EL TRANS. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>
